@@ -4,51 +4,50 @@
     "rules": {
         "prettier/prettier": true,
         "shorthand-property-no-redundant-values": true,
- 
-        "block-opening-brace-newline-after": "always",  // GBE #2
-        "block-opening-brace-newline-before": "always", // GBE #2
-        "block-closing-brace-newline-after": "always",  // GBE #2
-        "block-closing-brace-newline-before": "always", // GBE #2
- 
-        "declaration-colon-space-after": "always",                          // GBE #3
-        "declaration-bang-space-before": "always",                          // GBE #3
-        "declaration-bang-space-after": "never",                            // GBE #3
-        "declaration-block-semicolon-newline-before": "never-multi-line",   // GBE #3
-        "declaration-block-semicolon-newline-after": "always",              // GBE #3
-        "declaration-block-trailing-semicolon": "always",                   // GBE #3
-        "declaration-block-semicolon-space-after": "always-single-line",    // GBE #3
-        "declaration-block-single-line-max-declarations": 1,                // GBE #3
- 
-        "indentation": 4,       // GBE #4
- 
-        "declaration-block-semicolon-newline-after": "always", // GBE #5
- 
+
+        "block-opening-brace-newline-after": "always",
+        "block-opening-brace-newline-before": "always",
+        "block-closing-brace-newline-after": "always",
+        "block-closing-brace-newline-before": "always",
+
+        "declaration-colon-space-after": "always",
+        "declaration-bang-space-before": "always",
+        "declaration-bang-space-after": "never",
+        "declaration-block-semicolon-newline-before": "never-multi-line",
+        "declaration-block-trailing-semicolon": "always",
+        "declaration-block-semicolon-space-after": "always-single-line",
+        "declaration-block-single-line-max-declarations": 1,
+
+        "indentation": 4,
+
+        "declaration-block-semicolon-newline-after": "always",
+
         "property-disallowed-list": [
-            "margin-top",       // use margin: X X X X instead  GBE #6
-            "margin-bottom",    // use margin: X X X X instead  GBE #6
-            "margin-left",      // use margin: X X X X instead  GBE #6
-            "margin-right",     // use margin: X X X X instead  GBE #6
-            "padding-top",      // use padding: X X X X instead GBE #6
-            "padding-bottom",   // use padding: X X X X instead GBE #6
-            "padding-left",     // use padding: X X X X instead GBE #6
-            "padding-right",    // use padding: X X X X instead GBE #6
+            "margin-top",
+            "margin-bottom",
+            "margin-left",
+            "margin-right",
+            "padding-top",
+            "padding-bottom",
+            "padding-left",
+            "padding-right"
         ],
- 
-        "selector-max-empty-lines": 0,                  // GBE #8
-        "selector-max-id": 0,                           // GBE #8
-        "selector-class-pattern": "[a-z]([-][a-z]+)*",  // GBE #8
- 
-        "color-hex-case": "lower",                  // everything lower case
-        "color-hex-length": "long",                 // everything lower case
-        "function-case-name": "lower",              // everything lower case
-        "unit-case": "lower",                       // everything lower case
-        "property-case": "lower",                   // everything lower case
-        "selector-pseudo-class-case": "lower",      // everything lower case
-        "selector-pseudo-element-case": "lower",    // everything lower case
-        "selector-type-case": "lower",              // everything lower case
-        "media-feature-name-case": "lower",         // everything lower case
-        "at-rule-name-case": "lower",               // everything lower case
- 
-        "comment-whitespace-inside": "always",
+
+        "selector-max-empty-lines": 0,
+        "selector-max-id": 0,
+        "selector-class-pattern": "[a-z]([-][a-z]+)*",
+
+        "color-hex-case": "lower",
+        "color-hex-length": "long",
+        "function-case-name": "lower",
+        "unit-case": "lower",
+        "property-case": "lower",
+        "selector-pseudo-class-case": "lower",
+        "selector-pseudo-element-case": "lower",
+        "selector-type-case": "lower",
+        "media-feature-name-case": "lower",
+        "at-rule-name-case": "lower",
+
+        "comment-whitespace-inside": "always"
     }
 }

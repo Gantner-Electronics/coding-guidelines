@@ -1,29 +1,29 @@
 {
-  "alt-require": true, // Alt of img must be present and alt of area[href] and input[type=image] must be set value. - warning
-  "attr-lowercase": true, // Attribute name must be lowercase. - error
-  "attr-no-duplication": true, // The same attribute can't be specified twice. - error
-  "attr-no-unnecessary-whitespace": true, // No spaces between attribute names and values. - error
-  "attr-unsafe-chars": true, // Attribute value cannot use unsafe chars. - warning
-  "attr-value-double-quotes": true, // Attribute value must closed by double quotes. - error
-  "attr-value-not-empty": true, // No official docu - Guess: no empty attribute allowed
-  "doctype-first": true, // Doctype must be first. - error
-  "doctype-html5": true, // Doctype must be html5. - warning
-  "empty-tag-not-self-closed": false, // The empty tag should not be closed by self. - warning
-  "head-script-disabled": true, // The script tag can not be used in head. - warning
-  "href-abs-or-rel": false, // Href must be absolute or relative. - warning
-  "id-class-ad-disabled": true, // Id and class can not use ad keyword, it will blocked by adblock software. - warning
-  "id-class-value": "hump", // Id and class value must meet some rules: underline, dash, hump. - warning
-  "id-unique": true, // ID attributes must be unique in the document. - error
-  "inline-scirpt-disabled": true, // Inline script cannot be use. - warning
-  "inline-style-disabled": true, // Inline style cannot be use. - warning
-  "input-requires-label": true, // All [ input ] tags must have a corresponding [ label ] tag. - warning
-  "space-tab-mixed-disabled": true, // Spaces and tabs can not mixed in front of line. - warning
-  "spec-char-escape": true, // Special characters must be escaped. - error
-  "src-not-empty": true, // Src of img(script, link) must set value. - error
-  "style-disabled": true, // Style tag can not be use. - warning
-  "tags-check": true, // Allowing specify rules for any tag and validate that
-  "tag-pair": true, // Tag must be paired. - error
-  "tag-self-close": true, // No offical docu - Prefer self closed tags
-  "tagname-lowercase": true, // Tagname must be lowercase. - error.
-  "title-require": true // <title> must be present in <head> tag. - error
+    "alt-require": true,
+    "attr-lowercase": true,
+    "attr-no-duplication": true,
+    "attr-no-unnecessary-whitespace": true,
+    "attr-unsafe-chars": true,
+    "attr-value-double-quotes": true,
+    "attr-value-not-empty": true,
+    "doctype-first": true,
+    "doctype-html5": true,
+    "empty-tag-not-self-closed": false,
+    "head-script-disabled": true,
+    "href-abs-or-rel": false,
+    "id-class-ad-disabled": true,
+    "id-class-value": "hump",
+    "id-unique": true,
+    "inline-scirpt-disabled": true,
+    "inline-style-disabled": true,
+    "input-requires-label": true,
+    "space-tab-mixed-disabled": true,
+    "spec-char-escape": true,
+    "src-not-empty": true,
+    "style-disabled": true,
+    "tags-check": true,
+    "tag-pair": true,
+    "tag-self-close": true,
+    "tagname-lowercase": true,
+    "title-require": true
 }

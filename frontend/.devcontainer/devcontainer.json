@@ -1,51 +1,51 @@
 {
-  "name": "Gantner-Electronic-Frontend-Template",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
-  "containerEnv": {
-    "WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
-  },
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": "true",
-      "configureZshAsDefaultShell": "true",
-      "installOhMyZsh": "true",
-      "username": "gantner",
-      "userUid": "1000",
-      "userGid": "1000",
-      "upgradePackages": "true"
+    "name": "Gantner-Electronic-Frontend-Template",
+    "build": {
+        "dockerfile": "./Dockerfile"
     },
-    "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
-    "ghcr.io/jungaretti/features/vim:1": {},
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "14"
+    "containerEnv": {
+        "WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "configureZshAsDefaultShell": "true",
+            "installOhMyZsh": "true",
+            "username": "gantner",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
+        "ghcr.io/jungaretti/features/vim:1": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "14"
+        }
+    },
+    "remoteUser": "gantner",
+    "postStartCommand": [
+        "zsh",
+        "-c",
+        "sudo chmod +x .devcontainer/init-container.sh && .devcontainer/init-container.sh"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "rvest.vs-code-prettier-eslint",
+                "HTMLHint.vscode-htmlhint",
+                "stylelint.vscode-stylelint"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+                "editor.formatOnPaste": false,
+                "editor.formatOnType": false,
+                "editor.formatOnSave": true,
+                "editor.formatOnSaveMode": "file",
+                "files.autoSave": "onFocusChange",
+                "vs-code-prettier-eslint.prettierLast": false
+            }
+        }
     }
-  },
-  "remoteUser": "gantner",
-  "postStartCommand": [
-    "zsh",
-    "-c",
-    "sudo chmod +x .devcontainer/init-container.sh && .devcontainer/init-container.sh"
-  ],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "rvest.vs-code-prettier-eslint",
-        "HTMLHint.vscode-htmlhint",
-        "stylelint.vscode-stylelint"
-      ],
-      "settings": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-        "editor.formatOnPaste": false,
-        "editor.formatOnType": false,
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file",
-        "files.autoSave": "onFocusChange",
-        "vs-code-prettier-eslint.prettierLast": false
-      }
-    }
-  }
 }
