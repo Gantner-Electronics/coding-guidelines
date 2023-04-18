@@ -22,7 +22,7 @@
         "selector-class-pattern": "[a-z]([-][a-z]+)*",
 
         "color-hex-length": "long",
-        "function-case-name": "lower",
+        "function-name-case": "lower",
         "selector-type-case": "lower",
 
         "comment-whitespace-inside": "always"
