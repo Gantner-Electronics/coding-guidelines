@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudo apt update 
-sudo apt install vim npm zsh tmux curl fonts-powerline -y
+sudo apt install fonts-powerline -y

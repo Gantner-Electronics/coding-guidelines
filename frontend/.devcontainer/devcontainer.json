@@ -3,15 +3,27 @@
   "build": {
     "dockerfile": "./Dockerfile"
   },
-  //"postCreateCommand": "curl -s 'https://raw.githubusercontent.com/Gantner-Electronics/coding-guidelines/feature/devcontainers/frontend/devcontainer/setup.sh' | sh",
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "configureZshAsDefaultShell": "true",
+      "installOhMyZsh": "true",
+      "username": "gantner",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "true"
+    },
+    "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
+    "ghcr.io/jungaretti/features/vim:1": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/node:1": {
       "version": "14"
-    },
-    "ghcr.io/devcontainers-contrib/features/angular-cli:2": {
-      "version": "12"
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "gantner",
+  "postCreateCommand": [
+    "zsh",
+    "-c",
+    "sudo chmod +x .devcontainer/init-container.sh && .devcontainer/init-container.sh"
+  ]
 }
