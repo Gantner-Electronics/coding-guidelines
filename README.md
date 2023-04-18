@@ -18,6 +18,8 @@ You can find it here: https://github.com/devcontainers/images/blob/main/src/base
 
 The base container is equipped with code formatting and static code analyzer configured with Gantner's Guidelines ready to develope Angular TypeScript projects.
 
-To setup a fronted repository create a folder and run following script in the folder
+To setup a fronted repository create a folder and run following script in the folder:
 
-curl -s "https://raw.githubusercontent.com/Gantner-Electronics/coding-guidelines/feature/devcontainers/frontend/setup.sh" | sh
+curl -s "https://raw.githubusercontent.com/Gantner-Electronics/coding-guidelines/main/frontend/setup.sh" | sh
+
+If you have already initialized npm in this folder dependencies for guidelines are added to package json as dev dependencies!
