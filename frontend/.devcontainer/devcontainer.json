@@ -3,6 +3,9 @@
   "build": {
     "dockerfile": "./Dockerfile"
   },
+  "containerEnv": {
+    "WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+  },
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": "true",
@@ -21,9 +24,28 @@
     }
   },
   "remoteUser": "gantner",
-  "postCreateCommand": [
+  "postStartCommand": [
     "zsh",
     "-c",
     "sudo chmod +x .devcontainer/init-container.sh && .devcontainer/init-container.sh"
-  ]
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "HTMLHint.vscode-htmlhint",
+        "stylelint.vscode-stylelint"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "files.autoSave": "onFocusChange",
+        "vs-code-prettier-eslint.prettierLast": false
+      }
+    }
+  }
 }
