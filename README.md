@@ -1,4 +1,4 @@
-# Ganter Software Development Guidelines
+# Gantner Software Development Guidelines
 
 In this repository scripts and Dockerfiles are stored which define tools and configuration for harmonized software developing at Gantner Electronic.
 
