@@ -1,6 +1,6 @@
 # Style Guidelines - CSS, SCSS, Less
 
-Following styling guidelines are executed by StyleLint. Stylelint is an unopinionated style linter. The ruleset defined in the .stylelintrc file below are aligned with GBE CSS guidelines which can be found here (https://confluence.gantner.com/x/fpuvD).
+Following styling guidelines are executed by StyleLint. Stylelint is an unopinionated style linter. The ruleset defined in the .stylelintrc file below are aligned with GBE CSS guidelines which can be found in GBE's Confluence System.
 
 Stylelint VSCode Extension: https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 
