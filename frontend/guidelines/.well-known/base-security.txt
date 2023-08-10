@@ -1,0 +1,3 @@
+Contact: security@gantner.com
+Preferred-Languages: en, de
+Expires: 31.12.2024
