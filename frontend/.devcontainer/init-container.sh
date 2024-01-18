@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+# run personal scripts to set identities or personal application settings
+if [ -f /tmp/scripts/set-gantner-git-identity.sh ]; then
+	/tmp/scripts/set-gantner-git-identity.sh
+else
+    echo 'Cannot set Gantner Git identity. File not found'
+fi
+
 # install angular
 export NG_CLI_ANALYTICS="ci"
 npm i -g @angular/cli@12
