@@ -29,6 +29,9 @@
         "-c",
         "sudo chmod +x .devcontainer/init-container.sh && .devcontainer/init-container.sh"
     ],
+    "mounts": [
+		"source=${localEnv:HOME}/scripts,target=/tmp/scripts,type=bind,consistency=cached"
+	],
     "customizations": {
         "vscode": {
             "extensions": [
