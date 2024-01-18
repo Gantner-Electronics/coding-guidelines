@@ -35,7 +35,9 @@
                 "dbaeumer.vscode-eslint",
                 "rvest.vs-code-prettier-eslint",
                 "HTMLHint.vscode-htmlhint",
-                "stylelint.vscode-stylelint"
+                "stylelint.vscode-stylelint",
+                "jebbs.plantuml",
+                "qhoekman.language-plantuml"
             ],
             "settings": {
                 "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
@@ -44,7 +46,11 @@
                 "editor.formatOnSave": true,
                 "editor.formatOnSaveMode": "file",
                 "files.autoSave": "onFocusChange",
-                "vs-code-prettier-eslint.prettierLast": false
+                "vs-code-prettier-eslint.prettierLast": false,
+                "plantuml.server": "https://www.plantuml.com/plantuml",
+                "plantuml.render": "PlantUMLServer",
+                "plantuml.diagramsRoot": "architecture",
+                "plantuml.exportOutDir": "architecture/out"
             }
         }
     }

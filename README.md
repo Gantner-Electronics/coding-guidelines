@@ -17,6 +17,7 @@ Frontend dev containers have VS Code's ubuntu dev container as base.
 You can find it here: https://github.com/devcontainers/images/blob/main/src/base-ubuntu/manifest.json
 
 The base container is equipped with code formatting and static code analyzer configured with Gantner's Guidelines ready to develope Angular TypeScript projects.
+To create documentation directly in code also PlantUML tooling is available.
 
 To setup a fronted repository create a folder and run following script in the folder:
 
