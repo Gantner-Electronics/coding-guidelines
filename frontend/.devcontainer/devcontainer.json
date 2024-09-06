@@ -20,7 +20,7 @@
         "ghcr.io/jungaretti/features/vim:1": {},
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "14"
+            "version": "20"
         }
     },
     "remoteUser": "gantner",
