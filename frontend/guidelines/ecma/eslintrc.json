@@ -39,7 +39,7 @@
         "radix": ["error", "always"],
         "semi": ["error", "always"],
         "eqeqeq": "error",
-        "@typescript-eslint/typedef": ["warn", { "variableDeclaration": true }],
+        "@typescript-eslint/typedef": ["error", { "variableDeclaration": true }],
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
