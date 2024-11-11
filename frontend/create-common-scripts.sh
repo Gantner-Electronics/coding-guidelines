@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Run this script directly with
+#        sh <(curl -s https://raw.githubusercontent.com/Gantner-Electronics/coding-guidelines/refs/heads/main/frontend/create-common-scripts.sh)
+
 read -p "Do you want to to create git identity file? (yes/no) " yn
 
 case $yn in
