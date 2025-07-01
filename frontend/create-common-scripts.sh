@@ -1,5 +1,19 @@
 #!/bin/sh
 
+scriptsFolder=~/scripts
+identitiesFileName=$scriptsFolder/set-identities.sh
+
+if [ ! -d $scriptsFolder ]; then
+        mkdir -p $scriptsFolder
+fi
+
+if [ -e $identitiesFileName ]; then
+        backupIdentitiesFileName=$scriptsFolder/set-identities.old-`date +%s`.sh
+        echo "Backing up existing set-identities.sh file to $backupIdentitiesFileName"
+        mv $identitiesFileName $backupIdentitiesFileName
+        rm -rf $identitiesFileName
+fi
+
 read -p "Do you want to to create git identity file? (yes/no) " yn
 
 case $yn in
@@ -12,7 +26,7 @@ if [ $gitIdentity ]; then
         read -p "Enter your email address: " email
         read -p "Enter your name: " username
 
-        fileName=~/scripts/set-gantner-git-identity.sh
+        fileName=$scriptsFolder/set-gantner-git-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -20,7 +34,13 @@ if [ $gitIdentity ]; then
         echo "git config --global user.name \"$username\"" >> $fileName
         echo "echo \"Git identity (Gantner) set!\"" >> $fileName
         echo "Creating git identity file..."
+
+        echo "Adding git identity file to $identitiesFileName"
+        echo $fileName >> $identitiesFileName
 fi
+
+echo "set +a" >> $identitiesFileName
+
 
 read -p "Do you want to to create azure artifacts identity file? (yes/no) " yn
 
@@ -34,7 +54,7 @@ if [ $aaIdentity ]; then
         read -p "Enter your email address: " email
         read -p "Enter your access token: " token
 
-        fileName=~/scripts/set-azure-artifacts-npm-identity.sh
+        fileName=$scriptsFolder/set-azure-artifacts-npm-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -43,6 +63,9 @@ if [ $aaIdentity ]; then
         echo "export NPM_TOKEN_BASE64=$(echo -n $token | base64)" >> $fileName
         echo "echo \"Azure Artifacts identity set!\"" >> $fileName
         echo "Creating azure artifacts identity file..."
+
+        echo "Adding azure artifacts identity file to $identitiesFileName"
+        echo ". $fileName" >> $identitiesFileName
 fi
 
 read -p "Do you want to to create aws identity file? (yes/no) " yn
@@ -58,7 +81,7 @@ if [ $awsIdentity ]; then
         read -p "Enter your aws secret access key: " secretAccessKey
         read -p "Enter your aws session token: " sessionToken
 
-        fileName=~/scripts/set-aws-identity.sh
+        fileName=$scriptsFolder/set-aws-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -67,4 +90,9 @@ if [ $awsIdentity ]; then
         echo "export AWS_SESSION_TOKEN=$sessionToken" >> $fileName
         echo "echo \"AWS identity set!\"" >> $fileName
         echo "Creating aws identity file..."
+
+        echo "Adding aws identity file to $identitiesFileName"
+        echo ". $fileName" >> $identitiesFileName
 fi
+
+echo "set -a" >> $identitiesFileName
