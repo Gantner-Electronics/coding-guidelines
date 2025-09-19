@@ -12,7 +12,7 @@ if [[ -z "{$PACKAGES_TO_FIND_FILE}" ]]; then
 	exit 1
 fi
 
-INSTALLED_PACKAGES=$(npm ls -a)
+INSTALLED_PACKAGES=$(npm ls -a || true)
 
 # Read each package and version from the JSON file
 echo $PACKAGES_TO_FIND_FILE | while read -r package; do
