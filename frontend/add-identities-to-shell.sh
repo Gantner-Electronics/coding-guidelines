@@ -1,3 +1,6 @@
+# Run this script directly with
+#        sh <(curl -s https://raw.githubusercontent.com/Gantner-Electronics/coding-guidelines/refs/heads/main/frontend/add-identities-to-shell.sh)
+
 identitiesFileName=~/scripts/set-identities.sh
 
 if [ `echo $SHELL | grep -c "bash"` -gt 0 ]; then
