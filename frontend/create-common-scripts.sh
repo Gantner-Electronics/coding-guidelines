@@ -21,17 +21,17 @@ fi
 
 read -p "Do you want to to create git identity file? (yes/no) " yn
 
+fileName=$scriptsFolder/set-gantner-git-identity.sh
 case $yn in
         yes ) gitIdentity=1;;
-        no ) echo Will not create git-identity-file;;
-        * ) echo Will not create git-identity-file;;
+        no ) echo Will not create $fileName;;
+        * ) echo Will not create $fileName;;
 esac
 
 if [ $gitIdentity ]; then
         read -p "Enter your email address: " email
         read -p "Enter your name: " username
 
-        fileName=$scriptsFolder/set-gantner-git-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -39,9 +39,17 @@ if [ $gitIdentity ]; then
         echo "git config --global user.name \"$username\"" >> $fileName
         echo "echo \"Git identity (Gantner) set!\"" >> $fileName
         echo "Creating git identity file..."
+        sudo chmod +x $fileName
 
         echo "Adding git identity file to $identitiesFileName"
         echo $fileName >> $identitiesFileName
+else
+        if [ -e $fileName ]; then
+                echo $fileName >> $identitiesFileName
+                echo "Reusing existing $fileName in $identitiesFileName"
+        else
+                echo "$fileName does not exist. Skipping..."
+        fi
 fi
 
 echo "set +a" >> $identitiesFileName
@@ -51,17 +59,17 @@ echo "set +a" >> $identitiesFileName
 
 read -p "Do you want to to create azure artifacts identity file? (yes/no) " yn
 
+fileName=$scriptsFolder/set-azure-artifacts-npm-identity.sh
 case $yn in
         yes ) aaIdentity=1;;
-        no ) echo Will not create azure artifacts identity file;;
-        * ) echo Will not create azure artifacts identity file;;
+        no ) echo Will not create $fileName;;
+        * ) echo Will not create $fileName;;
 esac
 
 if [ $aaIdentity ]; then
         read -p "Enter your email address: " email
         read -p "Enter your access token: " token
 
-        fileName=$scriptsFolder/set-azure-artifacts-npm-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -73,17 +81,25 @@ if [ $aaIdentity ]; then
 
         echo "Adding azure artifacts identity file to $identitiesFileName"
         echo ". $fileName" >> $identitiesFileName
+else
+        if [ -e $fileName ]; then
+                echo ". $fileName" >> $identitiesFileName
+                echo "Reusing existing $fileName in $identitiesFileName"
+        else
+                echo "$fileName does not exist. Skipping..."
+        fi
 fi
-
 
 #* AWS identity
 
 read -p "Do you want to to create aws identity file? (yes/no) " yn
 
+fileName=$scriptsFolder/set-aws-identity.sh
+
 case $yn in
         yes ) awsIdentity=1;;
-        no ) echo Will not create aws identity file;;
-        * ) echo Will not create aws identity file;;
+        no ) echo Will not create $fileName;;
+        * ) echo Will not create $fileName;;
 esac
 
 if [ $awsIdentity ]; then
@@ -91,7 +107,6 @@ if [ $awsIdentity ]; then
         read -p "Enter your aws secret access key: " secretAccessKey
         read -p "Enter your aws session token: " sessionToken
 
-        fileName=$scriptsFolder/set-aws-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -103,23 +118,30 @@ if [ $awsIdentity ]; then
 
         echo "Adding aws identity file to $identitiesFileName"
         echo ". $fileName" >> $identitiesFileName
+else
+        if [ -e $fileName ]; then
+                echo ". $fileName" >> $identitiesFileName
+                echo "Reusing existing $fileName in $identitiesFileName"
+        else
+                echo "$fileName does not exist. Skipping..."
+        fi
 fi
 
 #* Docker Hub identity
 
 read -p "Do you want to to create docker hub identity file? (yes/no) " yn
 
+fileName=$scriptsFolder/set-docker-hub-identity.sh
 case $yn in
         yes ) dockerHubIdentity=1;;
-        no ) echo Will not create docker-hub-identity-file;;
-        * ) echo Will not create docker-hub-identity-file;;
+        no ) echo Will not create $fileName;;
+        * ) echo Will not create $fileName;;
 esac
 
 if [ $dockerHubIdentity ]; then
         read -p "Enter your username: " username
         read -p "Enter your PAT: " pat
 
-        fileName=$scriptsFolder/set-docker-hub-identity.sh
         rm -rf $fileName
         echo "#!/bin/sh" >> $fileName
         echo "" >> $fileName
@@ -128,8 +150,15 @@ if [ $dockerHubIdentity ]; then
         echo "echo \"DockerHub identity set!\"" >> $fileName
         echo "Creating docker hub identity file..."
 
-        echo "Adding docker hub identity file to $identitiesFileName"
+        echo "Adding $fileName file to $identitiesFileName"
         echo ". $fileName" >> $identitiesFileName
+else
+        if [ -e $fileName ]; then
+                echo ". $fileName" >> $identitiesFileName
+                echo "Reusing existing $fileName in $identitiesFileName"
+        else
+                echo "$fileName does not exist. Skipping..."
+        fi
 fi
 
 echo "set -a" >> $identitiesFileName
