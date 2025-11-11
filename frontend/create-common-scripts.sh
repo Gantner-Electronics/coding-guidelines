@@ -17,6 +17,8 @@ if [ -e $identitiesFileName ]; then
         rm -rf $identitiesFileName
 fi
 
+#* Git identity
+
 read -p "Do you want to to create git identity file? (yes/no) " yn
 
 case $yn in
@@ -45,6 +47,8 @@ fi
 echo "set +a" >> $identitiesFileName
 
 
+#* Azure Artifacts identity
+
 read -p "Do you want to to create azure artifacts identity file? (yes/no) " yn
 
 case $yn in
@@ -71,6 +75,9 @@ if [ $aaIdentity ]; then
         echo ". $fileName" >> $identitiesFileName
 fi
 
+
+#* AWS identity
+
 read -p "Do you want to to create aws identity file? (yes/no) " yn
 
 case $yn in
@@ -95,6 +102,33 @@ if [ $awsIdentity ]; then
         echo "Creating aws identity file..."
 
         echo "Adding aws identity file to $identitiesFileName"
+        echo ". $fileName" >> $identitiesFileName
+fi
+
+#* Docker Hub identity
+
+read -p "Do you want to to create docker hub identity file? (yes/no) " yn
+
+case $yn in
+        yes ) dockerHubIdentity=1;;
+        no ) echo Will not create docker-hub-identity-file;;
+        * ) echo Will not create docker-hub-identity-file;;
+esac
+
+if [ $dockerHubIdentity ]; then
+        read -p "Enter your username: " username
+        read -p "Enter your PAT: " pat
+
+        fileName=$scriptsFolder/set-docker-hub-identity.sh
+        rm -rf $fileName
+        echo "#!/bin/sh" >> $fileName
+        echo "" >> $fileName
+        echo "export DOCKER_HUB_USER=$username" >> $fileName
+        echo "export DOCKER_HUB_PAT=$pat" >> $fileName
+        echo "echo \"DockerHub identity set!\"" >> $fileName
+        echo "Creating docker hub identity file..."
+
+        echo "Adding docker hub identity file to $identitiesFileName"
         echo ". $fileName" >> $identitiesFileName
 fi
 
